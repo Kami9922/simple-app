@@ -1,0 +1,12 @@
+services:
+  date:
+    image: kami92/simple-app-date
+    build:
+      dockerfile: date.dockerfile
+  simple-app:
+    image: kami92/simple-app
+    build: .
+    ports:
+      - '3000:3000'
+    depends_on:
+      - date
